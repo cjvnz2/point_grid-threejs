@@ -19,7 +19,7 @@ global.THREE = THREE;
  *************************************************/
 const uniforms = {
   ...getDefaultUniforms(),
-  u_pointsize: { value: 2.0 },
+  u_pointsize: { value: 1.5 },
   // wave 1
   u_noise_freq_1: { value: 2.1 },
   u_noise_amp_1: { value: 0.1 },
@@ -129,8 +129,8 @@ let app = {
 
     void main() {
       vec2 st = gl_FragCoord.xy/u_resolution.xy;
-
-      gl_FragColor = vec4(vec3(0.0, st),1.0);
+      gl_FragColor = vec4(vec3(96.0, 204.0 , 255.0)*0.00390625,1.0);
+      // gl_FragColor = vec4(vec3(0.0, st),1.0);
     }
     `;
   },
@@ -143,7 +143,7 @@ let app = {
     // this.controls.autoRotateSpeed = 2.0;
 
     // Environment
-    scene.background = new THREE.Color("#0d1214");
+    scene.background = new THREE.Color("#000000");
 
     // Mesh
     this.geometry = new THREE.PlaneGeometry(10, 10, 128, 128);
